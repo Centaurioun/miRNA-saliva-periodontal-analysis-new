@@ -25,6 +25,28 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
+
+# Configure output directory structure
+BASE_OUTPUT_DIR = "outputs/python_scripts"
+OUTPUT_DIRS = {
+    'base': BASE_OUTPUT_DIR,
+    'plots': f"{BASE_OUTPUT_DIR}/plots",
+    'tables': f"{BASE_OUTPUT_DIR}/tables", 
+    'sensitivity': f"{BASE_OUTPUT_DIR}/sensitivity"
+}
+
+# Create output directories
+for dir_name, dir_path in OUTPUT_DIRS.items():
+    os.makedirs(dir_path, exist_ok=True)
+
+def get_output_path(filename, output_type='plots'):
+    """Get standardized output path with Title Case naming"""
+    if not filename.endswith(('.png', '.jpg', '.jpeg', '.pdf', '.csv', '.txt')):
+        filename += '.png'  # Default to PNG for plots
+    
+    return os.path.join(OUTPUT_DIRS[output_type], filename)
+
+
 def unsupervised_discovery_analysis(df, rq_cols):
     """
     Unsupervised analysis to validate group structure
@@ -113,7 +135,7 @@ def unsupervised_discovery_analysis(df, rq_cols):
 
     plt.tight_layout()
     plt.savefig(
-        "results/plots/dimensionality_reduction.png", dpi=300, bbox_inches="tight"
+        "get_output_path("dimensionality_reduction.png", dpi=300, bbox_inches="tight"
     )
     plt.show()
 
@@ -198,7 +220,7 @@ def unsupervised_discovery_analysis(df, rq_cols):
     plt.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig("results/plots/clustering_results.png", dpi=300, bbox_inches="tight")
+    plt.savefig(get_output_path("Clustering_Results.png"), dpi=300, bbox_inches="tight")
     plt.show()
 
     # Acting as Hypothesis-Generating Engine: Interpret clustering results
@@ -223,7 +245,7 @@ def unsupervised_discovery_analysis(df, rq_cols):
         "interpretation": interpretation,
     }
 
-    composition_table.to_csv("results/tables/cluster_composition.csv")
+    composition_table.to_csv(get_output_path("Cluster_Composition.csv", "tables"))
 
     return clustering_results
 
@@ -433,7 +455,7 @@ def sensitivity_analysis_gapdh(df, rq_cols):
     print(f"Overall robustness: {robustness}")
 
     # Save sensitivity analysis results
-    comparison_table.to_csv("results/tables/sensitivity_analysis_comparison.csv")
+    comparison_table.to_csv(get_output_path("Sensitivity_Analysis_Comparison.csv", "tables"))
 
     sensitivity_summary = {
         "original_significant": original_significant,

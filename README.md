@@ -8,45 +8,96 @@ This project analyzes miRNA expression patterns in saliva samples to identify bi
 
 ## 📊 Dataset
 
-- **Sample size:** 108 participants (36 per group)
+- **Sample size:** 103 participants
 - **Groups:** Healthy (S), Gingivitis (G), Periodontitis (P)
 - **miRNAs analyzed:** 6 targets (mir146a, mir146b, mir155, mir203, mir223, mir381p)
 - **Reference gene:** GAPDH
 - **Clinical markers:** Plaque index, gingival index, pocket depth, bleeding on probing, missing teeth
 - **Demographics:** Age, sex
 
-## 🔬 Analysis Pipeline
+## 🔬 Analysis Options
 
-### Part 1: Foundation & Validation
-- Data loading and quality control
-- ΔΔCt transformation pipeline
-- Reference gene stability assessment
-- Demographics and clinical variable analysis
+### Option 1: Jupyter Notebook (Recommended)
+**Single comprehensive notebook with all analyses:**
+- `miRNA_Comprehensive_Analysis.ipynb` - Complete analysis pipeline
+- Interactive execution with real-time visualization
+- Organized output structure with Title Case naming
+- Outputs saved to: `outputs/jupyter_notebook/`
 
-### Part 2: Biomarker Discovery
-- Normality testing and statistical approach selection
-- Omnibus testing for differential expression
-- Pairwise comparisons with FDR correction
-- Clinical correlation analysis
+### Option 2: Python Scripts
+**Modular analysis in separate scripts:**
+- `src/miRNA_analysis.py` - Part 1: Foundation & Validation
+- `src/miRNA_analysis_part2.py` - Part 2: Biomarker Discovery
+- `src/miRNA_analysis_part3.py` - Part 3: Predictive Modeling
+- `src/miRNA_analysis_part4_corrected.py` - Part 4: Validation & Robustness
+- Outputs saved to: `outputs/python_scripts/`
 
-### Part 3: Predictive Modeling
-- Machine learning classification (Logistic Regression, Random Forest)
-- Feature importance analysis
-- Cross-validation and performance metrics
-- Diagnostic potential assessment
+## 📁 Project Structure
 
-### Part 4: Validation & Robustness
-- Unsupervised clustering analysis
-- GAPDH sensitivity testing
-- Subgroup analysis by demographics
-- Robustness assessment
+```
+miRNA-saliva-periodontal-analysis-new/
+├── 📔 miRNA_Comprehensive_Analysis.ipynb    # Complete Jupyter notebook
+├── 📄 miRNA-saliva-qPCR-results.csv        # Primary dataset
+├── 📄 requirements.txt                      # Dependencies
+├── 📁 src/                                  # Python scripts
+│   ├── miRNA_analysis.py                    # Part 1: Foundation
+│   ├── miRNA_analysis_part2.py              # Part 2: Biomarkers
+│   ├── miRNA_analysis_part3.py              # Part 3: ML Models
+│   └── miRNA_analysis_part4_corrected.py    # Part 4: Validation
+├── 📁 outputs/                              # Organized results
+│   ├── jupyter_notebook/                    # Notebook outputs
+│   │   ├── plots/                          # Visualizations
+│   │   ├── tables/                         # Data tables
+│   │   └── sensitivity/                    # Sensitivity analyses
+│   └── python_scripts/                     # Script outputs
+│       ├── plots/                          # Visualizations
+│       ├── tables/                         # Data tables
+│       └── sensitivity/                    # Sensitivity analyses
+├── 📁 docs/                                # Documentation
+│   ├── COMPREHENSIVE_ANALYSIS_RESULTS_EMBEDDED.md
+│   ├── DATA_DICTIONARY.md
+│   └── Prompt_for_Data_Analysis.md
+└── 📁 .github/                             # GitHub configuration
+    └── copilot-instructions.md
+```
+
+## 🚀 Quick Start
+
+### Using Jupyter Notebook (Recommended)
+```bash
+# Clone repository
+git clone https://github.com/Centaurioun/miRNA-saliva-periodontal-analysis-new.git
+cd miRNA-saliva-periodontal-analysis-new
+
+# Setup environment
+python -m venv .venv
+.venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+
+# Launch Jupyter and run the comprehensive notebook
+jupyter notebook miRNA_Comprehensive_Analysis.ipynb
+```
+
+### Using Python Scripts
+```bash
+# Setup environment (same as above)
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+
+# Run individual analysis parts
+python src/miRNA_analysis.py              # Part 1
+python src/miRNA_analysis_part2.py        # Part 2
+python src/miRNA_analysis_part3.py        # Part 3
+python src/miRNA_analysis_part4_corrected.py  # Part 4
+```
 
 ## 🎯 Key Findings
 
 ### Primary Results
-- **6 miRNAs identified** as significant biomarkers with perfect classification performance (AUC = 1.000)
+- **6 miRNAs identified** as significant biomarkers with excellent classification performance
 - **Top 3 biomarkers:** mir223, mir381p, mir203 (highest discriminatory power)
-- **Strong clinical correlations** with established periodontal markers (r = 0.56-0.73)
+- **Strong clinical correlations** with established periodontal markers
 - **Robust findings** across demographic subgroups and sensitivity analyses
 
 ### Clinical Implications

@@ -1,9 +1,15 @@
 # Comprehensive miRNA Periodontal Disease Analysis Results Report
 
 **Date:** July 16, 2025
-**Dataset:** miRNA-saliva-qPCR-results.csv (108 samples, 6 miRNAs, 3 disease groups)
+**Dataset:** miRNA-saliva-qPCR-results.csv (103 samples, 6 miRNAs, 3 disease groups)
 **Analysis Framework:** ΔΔCt qPCR methodology with rigorous statistical validation
-**Groups:** S=Healthy (n=36), G=Gingivitis (n=36), P=Periodontitis (n=36)
+**Groups:** S=Healthy, G=Gingivitis, P=Periodontitis
+
+**Repository Structure:**
+- **Python Scripts Output:** `outputs/python_scripts/`
+- **Jupyter Notebook Output:** `outputs/jupyter_notebook/`
+- **Documentation:** `docs/`
+- **Source Code:** `src/`
 
 ---
 
@@ -88,7 +94,7 @@
 | pocket_depth | Kruskal-Wallis | 74.36 | <0.001 | 1.98 | 2.21 | 3.92 |
 | bleeding_on_probing | Kruskal-Wallis | 90.27 | <0.001 | 5.78 | 25.01 | 64.35 |
 
-![Clinical Variables by Group](results/plots/clinical_variables_by_group.png)
+![Clinical Variables by Group](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Clinical_Variables_By_Group.png)
 
 ---
 
@@ -118,11 +124,12 @@
 - G vs P: p = 0.012, Cohen's d = 0.61
 
 **GAPDH-Clinical Correlations:**
+
 - Pocket depth: r = 0.67, p < 0.001
 - Gingival index: r = 0.59, p < 0.001
 - Bleeding on probing: r = 0.61, p < 0.001
 
-![GAPDH Stability](results/plots/gapdh_stability_boxplot.png)
+![GAPDH Stability](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\GAPDH_Stability_Boxplot.png)
 
 ---
 
@@ -153,7 +160,7 @@
 
 **Statistical approach selected:** Non-parametric tests for all analyses
 
-![RQ Distributions](results/plots/rq_distributions.png)
+![RQ Distributions](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\RQ_Distributions.png)
 
 ---
 
@@ -211,7 +218,7 @@
 | mir223 | 1.18 | 0.001 | 0.009 | 0.92 | ** |
 | mir381p | 1.34 | 0.001 | 0.008 | 0.95 | ** |
 
-![H vs G Boxplots](results/plots/boxplots_H_vs_G.png)
+![H vs G Boxplots](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Boxplots_H_vs_G.png)
 
 #### H vs P Comparison
 
@@ -226,7 +233,7 @@
 | mir223 | 2.41 | <0.001 | <0.001 | 1.52 | *** |
 | mir381p | 2.30 | <0.001 | <0.001 | 1.48 | *** |
 
-![H vs P Boxplots](results/plots/boxplots_H_vs_P.png)
+![H vs P Boxplots](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Boxplots_H_vs_P.png)
 
 #### G vs P Comparison
 
@@ -240,11 +247,11 @@
 | mir203 | 1.56 | <0.001 | 0.003 | 1.12 | ** |
 | mir223 | 1.78 | <0.001 | 0.002 | 1.25 | *** |
 
-![G vs P Boxplots](results/plots/boxplots_G_vs_P.png)
+![G vs P Boxplots](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Boxplots_G_vs_P.png)
 
 **Volcano Plots for All Comparisons:**
 
-![Volcano Plots](results/plots/volcano_plots.png)
+![Volcano Plots](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Volcano_Plots.png)
 
 ---
 
@@ -351,13 +358,13 @@
 
 **Correlation Heatmaps:**
 
-![Overall Correlation Heatmap](results/plots/correlation_heatmap.png)
+![Overall Correlation Heatmap](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Correlation_Heatmap.png)
 
-![miRNA-Clinical Correlation Heatmap](results/plots/correlation_heatmap_mirna_clinical.png)
+![miRNA-Clinical Correlation Heatmap](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Correlation_Heatmap_miRNA_Clinical.png)
 
 **Significant Correlation Scatter Plots:**
 
-![Significant Correlations](results/plots/scatter_plots_significant_correlations.png)
+![Significant Correlations](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Scatter_Plots_Significant_Correlations.png)
 
 ---
 
@@ -404,19 +411,19 @@
 
 **ROC Curves:**
 
-![ROC Curves](results/plots/roc_curves.png)
+![ROC Curves](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\ROC_Curves.png)
 
 **Confusion Matrices:**
 
-![Confusion Matrices](results/plots/confusion_matrices.png)
+![Confusion Matrices](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Confusion_Matrices.png)
 
 **Feature Importance Plot:**
 
-![Feature Importance](results/plots/feature_importance.png)
+![Feature Importance](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Feature_Importance.png)
 
 **Partial Dependence Plots:**
 
-![Partial Dependence Plots](results/plots/partial_dependence_plots.png)
+![Partial Dependence Plots](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Partial_Dependence_Plots.png)
 
 ---
 
@@ -461,11 +468,11 @@
 
 **Dimensionality Reduction Visualizations:**
 
-![Dimensionality Reduction](results/plots/dimensionality_reduction.png)
+![Dimensionality Reduction](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Dimensionality_Reduction.png)
 
 **Clustering Results:**
 
-![Clustering Results](results/plots/clustering_results.png)
+![Clustering Results](K:\IdeaProjects\miRNA-saliva-periodontal-analysis-new\outputs\python_scripts\plots\Clustering_Results.png)
 
 ---
 

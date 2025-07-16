@@ -33,6 +33,28 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
+
+# Configure output directory structure
+BASE_OUTPUT_DIR = "outputs/python_scripts"
+OUTPUT_DIRS = {
+    'base': BASE_OUTPUT_DIR,
+    'plots': f"{BASE_OUTPUT_DIR}/plots",
+    'tables': f"{BASE_OUTPUT_DIR}/tables", 
+    'sensitivity': f"{BASE_OUTPUT_DIR}/sensitivity"
+}
+
+# Create output directories
+for dir_name, dir_path in OUTPUT_DIRS.items():
+    os.makedirs(dir_path, exist_ok=True)
+
+def get_output_path(filename, output_type='plots'):
+    """Get standardized output path with Title Case naming"""
+    if not filename.endswith(('.png', '.jpg', '.jpeg', '.pdf', '.csv', '.txt')):
+        filename += '.png'  # Default to PNG for plots
+    
+    return os.path.join(OUTPUT_DIRS[output_type], filename)
+
+
 def predictive_modeling_analysis(df, candidate_biomarkers):
     """
     Comprehensive predictive modeling analysis
@@ -189,7 +211,7 @@ def predictive_modeling_analysis(df, candidate_biomarkers):
 
     results_df = pd.DataFrame(results_data)
     results_df = results_df.round(3)
-    results_df.to_csv("results/tables/model_performance_metrics.csv", index=False)
+    results_df.to_csv(get_output_path("Model_Performance_Metrics.csv", "tables"), index=False)
 
     print(f"\n📊 COMPREHENSIVE MODEL PERFORMANCE")
     print("-" * 35)
@@ -217,7 +239,7 @@ def predictive_modeling_analysis(df, candidate_biomarkers):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig("results/plots/roc_curves.png", dpi=300, bbox_inches="tight")
+    plt.savefig(get_output_path("ROC_Curves.png"), dpi=300, bbox_inches="tight")
     plt.show()
 
     # Confusion Matrices
@@ -249,7 +271,7 @@ def predictive_modeling_analysis(df, candidate_biomarkers):
         ax.set_ylabel("Actual")
 
     plt.tight_layout()
-    plt.savefig("results/plots/confusion_matrices.png", dpi=300, bbox_inches="tight")
+    plt.savefig(get_output_path("Confusion_Matrices.png"), dpi=300, bbox_inches="tight")
     plt.show()
 
     # Feature Importance Analysis
@@ -274,7 +296,7 @@ def predictive_modeling_analysis(df, candidate_biomarkers):
     plt.title("Random Forest Feature Importance", fontweight="bold")
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig("results/plots/feature_importance.png", dpi=300, bbox_inches="tight")
+    plt.savefig(get_output_path("Feature_Importance.png"), dpi=300, bbox_inches="tight")
     plt.show()
 
     # Get top 3 features for partial dependence plots
@@ -315,7 +337,7 @@ def predictive_modeling_analysis(df, candidate_biomarkers):
 
     plt.tight_layout()
     plt.savefig(
-        "results/plots/partial_dependence_plots.png", dpi=300, bbox_inches="tight"
+        "get_output_path("partial_dependence_plots.png", dpi=300, bbox_inches="tight"
     )
     plt.show()
 
@@ -355,10 +377,10 @@ def predictive_modeling_analysis(df, candidate_biomarkers):
 
     # Save comprehensive results
     cv_results_df = pd.DataFrame(cv_results).T
-    cv_results_df.to_csv("results/tables/detailed_model_results.csv")
+    cv_results_df.to_csv(get_output_path("Detailed_Model_Results.csv", "tables"))
 
     # Save feature importance
-    importance_df.to_csv("results/tables/feature_importance.csv", index=False)
+    importance_df.to_csv(get_output_path("Feature_Importance.csv", "tables"), index=False)
 
     return cv_results, top_features
 
@@ -380,7 +402,7 @@ def main():
                 ".csv", ""
             )
             try:
-                comp_df = pd.read_csv(f"results/tables/{filename}")
+                comp_df = pd.read_csv(f"get_output_path("{filename}")
                 candidate_biomarkers[comp_name] = comp_df.to_dict("records")
             except:
                 pass

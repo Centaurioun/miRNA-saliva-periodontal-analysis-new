@@ -1,0 +1,20 @@
+
+    LIMITATION OF REFERENCE GENE NORMALIZATION:
+
+    This analysis relies on a single reference gene (GAPDH) for normalization, which represents
+    a significant methodological limitation. Best practices in qPCR analysis recommend:
+
+    1. Use of multiple reference genes (ideally 3-5) for robust normalization
+    2. Validation of reference gene stability using algorithms like geNorm or NormFinder
+    3. Assessment of reference gene stability across all experimental conditions
+
+    The current single-gene approach may introduce bias if GAPDH expression is influenced by:
+    - Disease state (periodontal inflammation)
+    - Metabolic changes in saliva
+    - Sample collection or processing conditions
+
+    RECOMMENDATIONS FOR FUTURE STUDIES:
+    - Validate findings with a panel of reference genes (e.g., ACTB, HPRT1, RPLP0)
+    - Use geometric mean of multiple reference genes for normalization
+    - Implement reference gene stability assessment in study design
+    

@@ -22,6 +22,28 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
+
+# Configure output directory structure
+BASE_OUTPUT_DIR = "outputs/python_scripts"
+OUTPUT_DIRS = {
+    'base': BASE_OUTPUT_DIR,
+    'plots': f"{BASE_OUTPUT_DIR}/plots",
+    'tables': f"{BASE_OUTPUT_DIR}/tables", 
+    'sensitivity': f"{BASE_OUTPUT_DIR}/sensitivity"
+}
+
+# Create output directories
+for dir_name, dir_path in OUTPUT_DIRS.items():
+    os.makedirs(dir_path, exist_ok=True)
+
+def get_output_path(filename, output_type='plots'):
+    """Get standardized output path with Title Case naming"""
+    if not filename.endswith(('.png', '.jpg', '.jpeg', '.pdf', '.csv', '.txt')):
+        filename += '.png'  # Default to PNG for plots
+    
+    return os.path.join(OUTPUT_DIRS[output_type], filename)
+
+
 def calculate_effect_size(group1, group2, test_type="mann_whitney"):
     """Calculate effect size for non-parametric tests"""
     if test_type == "mann_whitney":
@@ -77,7 +99,7 @@ def differential_expression_analysis(df, rq_cols):
 
     # Create omnibus results table
     omnibus_df = pd.DataFrame(omnibus_results).T
-    omnibus_df.to_csv("results/tables/omnibus_test_results.csv")
+    omnibus_df.to_csv(get_output_path("Omnibus_Test_Results.csv", "tables"))
 
     # Identify significant miRNAs for post-hoc analysis
     significant_mirnas = [
@@ -149,7 +171,7 @@ def differential_expression_analysis(df, rq_cols):
         # Create results table for this comparison
         results_df = pd.DataFrame(results).T
         results_df = results_df.round(4)
-        results_df.to_csv(f"results/tables/{comp_name}_results.csv")
+        results_df.to_csv(f"get_output_path("{comp_name}_results.csv")
 
         print(
             results_df[
@@ -214,7 +236,7 @@ def differential_expression_analysis(df, rq_cols):
         ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig("results/plots/volcano_plots.png", dpi=300, bbox_inches="tight")
+    plt.savefig(get_output_path("Volcano_Plots.png"), dpi=300, bbox_inches="tight")
     plt.show()
 
     # Step 4: Generate candidate biomarkers lists
@@ -242,7 +264,7 @@ def differential_expression_analysis(df, rq_cols):
         if candidates:
             candidates_df = pd.DataFrame(candidates)
             candidates_df.to_csv(
-                f"results/tables/candidate_biomarkers_{comp_name}.csv", index=False
+                f"get_output_path("candidate_biomarkers_{comp_name}.csv", index=False
             )
             print(candidates_df)
 
@@ -294,7 +316,7 @@ def differential_expression_analysis(df, rq_cols):
 
             plt.tight_layout()
             plt.savefig(
-                f"results/plots/boxplots_{comp_name}.png", dpi=300, bbox_inches="tight"
+                f"get_output_path("boxplots_{comp_name}.png", dpi=300, bbox_inches="tight"
             )
             plt.show()
 
@@ -472,7 +494,7 @@ def correlation_analysis(df, candidate_biomarkers):
     plt.title("miRNA-Clinical Variable Correlations", fontweight="bold")
     plt.tight_layout()
     plt.savefig(
-        "results/plots/correlation_heatmap_mirna_clinical.png",
+        "get_output_path("correlation_heatmap_mirna_clinical.png",
         dpi=300,
         bbox_inches="tight",
     )
@@ -547,7 +569,7 @@ def correlation_analysis(df, candidate_biomarkers):
 
         plt.tight_layout()
         plt.savefig(
-            "results/plots/scatter_plots_significant_correlations.png",
+            "get_output_path("scatter_plots_significant_correlations.png",
             dpi=300,
             bbox_inches="tight",
         )
@@ -613,7 +635,7 @@ def correlation_analysis(df, candidate_biomarkers):
         # Save functional candidates
         functional_df = pd.DataFrame(functional_candidates)
         functional_df.to_csv(
-            "results/tables/functional_follow_up_candidates.csv", index=False
+            "get_output_path("functional_follow_up_candidates.csv", index=False
         )
     else:
         print("⚠️  No miRNAs meet both differential expression and correlation criteria")
@@ -626,7 +648,7 @@ def correlation_analysis(df, candidate_biomarkers):
             for alias in clinical_vars.values()
         }
     ).T
-    overall_corr_df.to_csv("results/tables/overall_correlations.csv")
+    overall_corr_df.to_csv(get_output_path("Overall_Correlations.csv", "tables"))
 
     return {
         "overall_correlations": overall_correlations,

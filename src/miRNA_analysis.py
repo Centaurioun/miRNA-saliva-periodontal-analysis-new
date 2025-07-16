@@ -48,6 +48,28 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
+
+# Configure output directory structure
+BASE_OUTPUT_DIR = "outputs/python_scripts"
+OUTPUT_DIRS = {
+    'base': BASE_OUTPUT_DIR,
+    'plots': f"{BASE_OUTPUT_DIR}/plots",
+    'tables': f"{BASE_OUTPUT_DIR}/tables", 
+    'sensitivity': f"{BASE_OUTPUT_DIR}/sensitivity"
+}
+
+# Create output directories
+for dir_name, dir_path in OUTPUT_DIRS.items():
+    os.makedirs(dir_path, exist_ok=True)
+
+def get_output_path(filename, output_type='plots'):
+    """Get standardized output path with Title Case naming"""
+    if not filename.endswith(('.png', '.jpg', '.jpeg', '.pdf', '.csv', '.txt')):
+        filename += '.png'  # Default to PNG for plots
+    
+    return os.path.join(OUTPUT_DIRS[output_type], filename)
+
+
 # Set style for publication-quality plots
 plt.style.use("seaborn-v0_8")
 sns.set_palette("husl")
@@ -167,7 +189,7 @@ def delta_delta_ct_transformation(df):
 
     # Create and save calibration table
     calibration_df = pd.DataFrame(calibration_data).T
-    calibration_df.to_csv("results/tables/calibration_table.csv")
+    calibration_df.to_csv(get_output_path("Calibration_Table.csv", "tables"))
     print("✓ Calibration table saved")
     print(calibration_df.round(3))
 
@@ -226,12 +248,12 @@ def delta_delta_ct_transformation(df):
         )
 
     plt.tight_layout()
-    plt.savefig("results/plots/rq_distributions.png", dpi=300, bbox_inches="tight")
+    plt.savefig(get_output_path("RQ_Distributions.png"), dpi=300, bbox_inches="tight")
     plt.show()
 
     # Create normality results table
     normality_df = pd.DataFrame(normality_results).T
-    normality_df.to_csv("results/tables/normality_test_results.csv")
+    normality_df.to_csv(get_output_path("Normality_Test_Results.csv", "tables"))
 
     print("Normality Test Results (Shapiro-Wilk):")
     print(normality_df.round(4))
@@ -360,7 +382,7 @@ def explore_demographics_and_clinical(df):
 
     plt.tight_layout()
     plt.savefig(
-        "results/plots/clinical_variables_by_group.png", dpi=300, bbox_inches="tight"
+        "get_output_path("clinical_variables_by_group.png", dpi=300, bbox_inches="tight"
     )
     plt.show()
 
@@ -372,7 +394,7 @@ def explore_demographics_and_clinical(df):
 
     all_stats = {**demographic_stats, **clinical_stats}
     stats_df = pd.DataFrame(all_stats).T
-    stats_df.to_csv("results/tables/demographic_clinical_stats.csv")
+    stats_df.to_csv(get_output_path("Demographic_Clinical_Stats.csv", "tables"))
 
     print("\nStatistical Test Results:")
     print(stats_df.round(4))
@@ -418,7 +440,7 @@ def explore_demographics_and_clinical(df):
         "Correlation Matrix: Demographics & Clinical Variables", fontweight="bold"
     )
     plt.tight_layout()
-    plt.savefig("results/plots/correlation_heatmap.png", dpi=300, bbox_inches="tight")
+    plt.savefig(get_output_path("Correlation_Heatmap.png"), dpi=300, bbox_inches="tight")
     plt.show()
 
     # Identify strong correlations (|r| > 0.4)
@@ -449,7 +471,7 @@ def explore_demographics_and_clinical(df):
 
             plt.tight_layout()
             plt.savefig(
-                f"results/plots/scatter_{var1}_vs_{var2}.png",
+                f"get_output_path("scatter_{var1}_vs_{var2}.png",
                 dpi=300,
                 bbox_inches="tight",
             )
@@ -492,7 +514,7 @@ def gapdh_stability_analysis(df):
     plt.ylabel("GAPDH Ct Value")
     plt.tight_layout()
     plt.savefig(
-        "results/plots/gapdh_stability_boxplot.png", dpi=300, bbox_inches="tight"
+        "get_output_path("gapdh_stability_boxplot.png", dpi=300, bbox_inches="tight"
     )
     plt.show()
 
@@ -549,7 +571,7 @@ def gapdh_stability_analysis(df):
     print(limitation_text)
 
     # Save limitation report
-    with open("results/tables/reference_gene_limitation_report.txt", "w") as f:
+    with open("get_output_path("reference_gene_limitation_report.txt", "w") as f:
         f.write(limitation_text)
 
     # 2. Sensitivity Analysis Setup (will be completed after differential expression)
@@ -600,7 +622,7 @@ def gapdh_stability_analysis(df):
 
         # Save correlation results
         gapdh_corr_df = pd.DataFrame(gapdh_clinical_corr).T
-        gapdh_corr_df.to_csv("results/tables/gapdh_clinical_correlations.csv")
+        gapdh_corr_df.to_csv(get_output_path("GAPDH_Clinical_Correlations.csv", "tables"))
 
         # HYPOTHESIS: GAPDH expression is regulated by disease state
         print(
