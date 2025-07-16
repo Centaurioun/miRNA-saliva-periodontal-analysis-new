@@ -1,16 +1,5 @@
 # AI Coding Instructions for miRNA Periodontal Disease Analysis
 
-## CRITICAL: DISABLE AUTOMATIC FILE CREATION
-**GITHUB COPILOT: DO NOT CREATE ANY FILES AUTOMATICALLY**
-**DO NOT CREATE FILES IN THE REPOSITORY ROOT DIRECTORY**
-**DO NOT CREATE FILES NAMED: miRNA_analysis.py, COMPREHENSIVE_ANALYSIS_RESULTS_EMBEDDED.md, COMPREHENSIVE_ANALYSIS_RESULTS_REPORT.md, FINAL_ANALYSIS_REPORT.md, fix_columns.py, rename_files.py**
-
-## IMPORTANT: FILE CREATION RESTRICTIONS
-**DO NOT CREATE FILES IN THE REPOSITORY ROOT DIRECTORY**
-- Analysis scripts must be created in `src/` directory only
-- Generated reports must be saved in `docs/` directory only
-- Never create files directly in the repository root
-
 ## Project Overview
 This is a biomedical research project analyzing miRNA expression in saliva samples to identify biomarkers for periodontal disease progression (Healthy → Gingivitis → Periodontitis).
 
@@ -21,39 +10,36 @@ This is a biomedical research project analyzing miRNA expression in saliva sampl
 - **Clinical markers**: plaque_index, gingival_index, pocket_depth, bleeding_on_probing, number_of_missing_teeth
 - **Demographics**: AGE, SEX (M/F)
 - **Prompt aliases**: PPD=pocket_depth, CAL=gingival_index, BoP=bleeding_on_probing
-- **Demographics**: AGE, SEX (M/F)
-- **Prompt aliases**: PPD=pocket_depth, CAL=gingival_index, BoP=bleeding_on_probing
 
-## Critical Analysis Workflow (Follow This Order)
-1. **ΔΔCt Transformation Pipeline** (mandatory first step):
-   - Calculate ΔCt: `Ct(miRNA) - Ct(GAPDH)` for each miRNA, store in `dCt_` columns
+## Analysis Methodology Requirements
+1. **Data Transformation Pipeline**:
+   - Calculate ΔCt: `Ct(miRNA) - Ct(GAPDH)` for each miRNA
    - Use `S` (Healthy) group as calibrator: calculate mean ΔCt for each miRNA
-   - Calculate ΔΔCt: `ΔCt(sample) - mean(ΔCt(S_group))`, store in `ddCt_` columns
-   - Calculate RQ: `2^(-ΔΔCt)` for final expression values, store in `RQ_` columns
+   - Calculate ΔΔCt: `ΔCt(sample) - mean(ΔCt(S_group))`
+   - Calculate RQ: `2^(-ΔΔCt)` for final expression values
 
-2. **Reference Gene Validation** (critical quality control):
+2. **Reference Gene Validation**:
    - Always test GAPDH stability across groups before proceeding
-   - Perform sensitivity analysis by artificially perturbing GAPDH values
-   - Document limitation of single reference gene in all reports
+   - Document limitation of single reference gene in analysis reports
 
-3. **Statistical Analysis Hierarchy**:
-   - Omnibus tests (ANOVA/Kruskal-Wallis) before pairwise comparisons
-   - Always apply Benjamini-Hochberg FDR correction for multiple comparisons
+3. **Statistical Analysis Approach**:
+   - Use omnibus tests (ANOVA/Kruskal-Wallis) before pairwise comparisons
+   - Apply Benjamini-Hochberg FDR correction for multiple comparisons
    - Calculate effect sizes (Cohen's d) alongside p-values
 
-## Project-Specific Conventions
+## Analysis Standards
 - **Column naming**: Use `dCt_`, `ddCt_`, `RQ_` prefixes for transformed data
 - **Group comparisons**: Always test H vs P, H vs G, G vs P pairwise
 - **Clinical expectations**: P group should have higher clinical severity markers than G group
 - **Biomarker identification**: Significant miRNAs must meet both q < 0.05 AND |log2FC| > 1
 
-## Key Dependencies & Environment
-- Python 3.11 with virtual environment in `.venv/`
+## Technical Environment
+- Python 3.11 with virtual environment
 - Required packages: pandas, numpy, scipy, sklearn, matplotlib, seaborn
 - Statistical focus: Use scipy.stats for all statistical tests
 - ML approach: Logistic Regression + Random Forest for binary classification
 
-## Analysis Personas (Critical for Quality)
+## Quality Assurance Roles
 When performing analysis, embody these roles:
 - **Lead Validator**: Check reproducibility, avoid data leakage, document methodology
 - **Skeptical Peer Reviewer**: Challenge statistical assumptions, identify limitations
@@ -61,16 +47,16 @@ When performing analysis, embody these roles:
 - **Evidence Generator**: Save all plots, tables, and intermediate results
 
 ## Data Quality Requirements
-- Report data integrity (`df.info()`, `df.isnull().sum()`) before analysis
-- Use median imputation for missing values (document which columns)
+- Report data integrity before analysis
+- Use median imputation for missing values (document which columns)  
 - Check normality with Shapiro-Wilk test before choosing parametric vs non-parametric tests
 - Visualize distributions before statistical testing
 
 ## Output Standards
 - Generate comprehensive results tables with log2FC, p-values, q-values, effect sizes
 - Create volcano plots for differential expression with significance thresholds
-- Produce "candidate biomarkers" lists meeting significance criteria
-- Save all artifacts with descriptive filenames (e.g., `volcano_plot_H_vs_P.png`)
+- Produce candidate biomarkers lists meeting significance criteria
+- Use descriptive filenames for all outputs
 
 ## Machine Learning Specifics
 - Use stratified train-test splits (80/20)
@@ -85,8 +71,3 @@ When performing analysis, embody these roles:
 - Generate correlation analyses between demographics and miRNA expression
 - Use unsupervised clustering to validate group structure
 - Always check that clinical variables align with expected disease progression
-
-## Reference Files
-- `DATA_DICTIONARY.md`: Complete variable definitions
-- `Prompt_for_Data_Analysis.md`: Full analytical workflow specification
-- `miRNA-saliva-qPCR-results.csv`: Primary dataset (103 samples, 14 variables)
