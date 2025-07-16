@@ -1,0 +1,16 @@
+
+REFERENCE GENE LIMITATION REPORT
+Generated: 2025-07-17 00:02:17
+
+Single Reference Gene Analysis:
+- Reference gene: GAPDH
+- Stability across groups: UNSTABLE
+- Kruskal-Wallis p-value: 0.000000
+
+Limitations:
+1. Single reference gene may not capture all sources of technical variation
+2. Multiple reference genes are recommended for robust normalization
+3. Results should be interpreted considering potential reference gene bias
+4. Future validation with additional reference genes is recommended
+
+Recommendation: Consider validating key findings with alternative reference genes
