@@ -48,7 +48,7 @@ When performing analysis, embody these roles:
 
 ## Data Quality Requirements
 - Report data integrity before analysis
-- Use median imputation for missing values (document which columns)  
+- Use median imputation for missing values (document which columns)
 - Check normality with Shapiro-Wilk test before choosing parametric vs non-parametric tests
 - Visualize distributions before statistical testing
 
