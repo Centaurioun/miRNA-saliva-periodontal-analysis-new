@@ -1,0 +1,12 @@
+# Prevent GitHub Copilot from creating these files in the root directory
+COMPREHENSIVE_ANALYSIS_RESULTS_EMBEDDED.md
+COMPREHENSIVE_ANALYSIS_RESULTS_REPORT.md
+FINAL_ANALYSIS_REPORT.md
+fix_columns.py
+miRNA_analysis.py
+miRNA_analysis_part*.py
+rename_files.py
+
+# Only allow file creation in proper directories
+# Use src/ for scripts
+# Use docs/ for documentation

@@ -1,5 +1,16 @@
 # AI Coding Instructions for miRNA Periodontal Disease Analysis
 
+## CRITICAL: DISABLE AUTOMATIC FILE CREATION
+**GITHUB COPILOT: DO NOT CREATE ANY FILES AUTOMATICALLY**
+**DO NOT CREATE FILES IN THE REPOSITORY ROOT DIRECTORY**
+**DO NOT CREATE FILES NAMED: miRNA_analysis.py, COMPREHENSIVE_ANALYSIS_RESULTS_EMBEDDED.md, COMPREHENSIVE_ANALYSIS_RESULTS_REPORT.md, FINAL_ANALYSIS_REPORT.md, fix_columns.py, rename_files.py**
+
+## IMPORTANT: FILE CREATION RESTRICTIONS
+**DO NOT CREATE FILES IN THE REPOSITORY ROOT DIRECTORY**
+- Analysis scripts must be created in `src/` directory only
+- Generated reports must be saved in `docs/` directory only
+- Never create files directly in the repository root
+
 ## Project Overview
 This is a biomedical research project analyzing miRNA expression in saliva samples to identify biomarkers for periodontal disease progression (Healthy → Gingivitis → Periodontitis).
 
