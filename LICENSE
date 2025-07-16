@@ -1,0 +1,59 @@
+MIT License
+
+Copyright (c) 2025 miRNA Periodontal Disease Analysis Project
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+IMPORTANT DATA AND RESULTS RESTRICTION:
+========================================
+
+While the analysis code, methodology, and documentation are provided under the
+MIT License above, the following restrictions apply:
+
+1. ORIGINAL DATASET: The raw qPCR data file "miRNA-saliva-qPCR-results.csv" and
+   any derivatives containing individual-level data are NOT included in this
+   repository and are NOT covered by this license.
+
+2. SENSITIVE RESULTS: Any results, outputs, or derivatives that could potentially
+   be used to reconstruct individual-level data are excluded from this license.
+
+3. METHODOLOGY ONLY: This license applies to the analytical methodology, code
+   structure, statistical approaches, and documentation - NOT to the specific
+   numerical results or data points.
+
+4. PRIVACY PROTECTION: Users must ensure compliance with applicable privacy laws
+   and ethical guidelines when working with similar datasets.
+
+5. ATTRIBUTION: If you use this methodology in your research, please provide
+   appropriate citation and acknowledgment.
+
+For questions about data access, collaboration, or commercial use of results,
+please contact the project maintainers through the repository's issue tracker.
+
+The analysis code and methodology provided here are intended for:
+- Educational purposes
+- Methodological reference
+- Reproducible research standards
+- Open science advancement
+
+This license does NOT grant rights to:
+- Use or distribute the original dataset
+- Claim ownership of the specific research findings
+- Use the results for commercial purposes without permission
+- Ignore ethical considerations in similar research
