@@ -1,0 +1,3 @@
+Model,CV_AUC_Mean,CV_AUC_Std,Test_AUC,Test_Accuracy,Test_Precision,Test_Recall,Test_F1
+Logistic Regression,0.999,0.007,1.0,1.0,1.0,1.0,1.0
+Random Forest,0.991,0.02,1.0,1.0,1.0,1.0,1.0

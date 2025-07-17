@@ -1,0 +1,27 @@
+Metric,Value,Percentage,Additional
+OVERALL STATISTICS,,,
+Total Samples,108,,
+Groups,3,,
+miRNAs Analyzed,6,,
+,,,
+GROUP DISTRIBUTION,,,
+Group S,36,33.3%,
+Group G,36,33.3%,
+Group P,36,33.3%,
+,,,
+AGE STATISTICS,,,
+Mean Age,25.7,,
+Median Age,24.0,,
+Age Range,20 - 49,,
+,,,
+SEX DISTRIBUTION,,,
+Sex F,57,52.8%,
+Sex M,51,47.2%,
+,,,
+MIRNA EXPRESSION SUMMARY,Mean,Median,Std Dev
+mir146a,1.784,1.475,1.124
+mir146b,1.756,1.510,1.039
+mir155,1.740,1.474,0.924
+mir203,2.067,1.295,1.664
+mir223,2.252,1.260,2.003
+mir381p,2.141,1.265,1.727

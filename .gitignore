@@ -134,15 +134,11 @@ Thumbs.db
 *.temp
 
 # Data files (IMPORTANT: Original data is proprietary)
-*.csv
-*.xlsx
-*.xls
 *.dat
 *.data
 !requirements.txt
 
 # Sensitive analysis results (Keep methodology, exclude raw data)
-miRNA-saliva-qPCR-results.csv
 *_raw_data.csv
 *_original_data.*
 

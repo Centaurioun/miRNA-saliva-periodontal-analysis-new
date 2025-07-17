@@ -1,0 +1,12 @@
+Feature,Importance,Problem
+bleeding_on_probing,0.4135019476000669,Healthy_vs_Gingivitis
+gingival_index,0.2618676030546843,Healthy_vs_Gingivitis
+plaque_index,0.1024347794693144,Healthy_vs_Gingivitis
+RQ_mir155,0.05518431271432591,Healthy_vs_Gingivitis
+RQ_mir146a,0.048519804545688244,Healthy_vs_Gingivitis
+pocket_depth,0.03155954534268235,Healthy_vs_Gingivitis
+RQ_mir146b,0.029824594417077195,Healthy_vs_Gingivitis
+RQ_mir381p,0.022936754612792612,Healthy_vs_Gingivitis
+RQ_mir203,0.017721673266236748,Healthy_vs_Gingivitis
+RQ_mir223,0.013768459121699935,Healthy_vs_Gingivitis
+number_of_missing_teeth,0.002680525855431485,Healthy_vs_Gingivitis

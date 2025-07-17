@@ -1,0 +1,12 @@
+Feature,Importance,Problem
+bleeding_on_probing,0.23743072468053902,Healthy_vs_Periodontitis
+gingival_index,0.19000323538266364,Healthy_vs_Periodontitis
+RQ_mir203,0.17507276071555783,Healthy_vs_Periodontitis
+pocket_depth,0.1392635590554573,Healthy_vs_Periodontitis
+plaque_index,0.10056484413171278,Healthy_vs_Periodontitis
+RQ_mir155,0.04462766945163045,Healthy_vs_Periodontitis
+RQ_mir381p,0.04015442721578624,Healthy_vs_Periodontitis
+RQ_mir223,0.03008753773011312,Healthy_vs_Periodontitis
+RQ_mir146a,0.024409144407942486,Healthy_vs_Periodontitis
+RQ_mir146b,0.018386097228597156,Healthy_vs_Periodontitis
+number_of_missing_teeth,0.0,Healthy_vs_Periodontitis

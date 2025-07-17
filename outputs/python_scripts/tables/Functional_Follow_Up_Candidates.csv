@@ -1,0 +1,7 @@
+miRNA,differential_expression,significant_correlations
+mir381p,True,"{'PPD': np.float64(0.5424191963986821), 'CAL': np.float64(0.6366537968149111), 'BoP': np.float64(0.6632477826436022)}"
+mir155,True,"{'PPD': np.float64(0.578001708161044), 'CAL': np.float64(0.6456704737831562), 'BoP': np.float64(0.7058966459419496)}"
+mir146b,True,"{'PPD': np.float64(0.515875047294787), 'CAL': np.float64(0.6337498458967395), 'BoP': np.float64(0.6663816319379171)}"
+mir203,True,"{'PPD': np.float64(0.6365533399607642), 'CAL': np.float64(0.6573487210037621), 'BoP': np.float64(0.7082836119639457)}"
+mir146a,True,"{'PPD': np.float64(0.49909922944912166), 'CAL': np.float64(0.582529452635963), 'BoP': np.float64(0.626212391110489)}"
+mir223,True,"{'PPD': np.float64(0.5417153350697682), 'CAL': np.float64(0.5673222362796569), 'BoP': np.float64(0.6290572695096781)}"
