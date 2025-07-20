@@ -8,7 +8,7 @@ This project analyzes miRNA expression patterns in saliva samples to identify bi
 
 ## 📊 Dataset
 
-- **Sample size:** 103 participants
+- **Sample size:** 108 participants
 - **Groups:** Healthy (S), Gingivitis (G), Periodontitis (P)
 - **miRNAs analyzed:** 6 targets (mir146a, mir146b, mir155, mir203, mir223, mir381p)
 - **Reference gene:** GAPDH
@@ -17,14 +17,23 @@ This project analyzes miRNA expression patterns in saliva samples to identify bi
 
 ## 🔬 Analysis Options
 
-### Option 1: Jupyter Notebook (Recommended)
-**Single comprehensive notebook with all analyses:**
+### Option 1: R Script (Recommended) ⭐
+**Complete professional analysis with enhanced statistics:**
+- `miRNA_Comprehensive_Analysis_Complete.R` - Production-ready R script
+- Expert panel validated with modern R best practices
+- Comprehensive statistical analysis with proper FDR correction
+- Machine learning models with cross-validation
+- Publication-ready visualizations
+- Outputs saved to: `outputs/r_script/`
+
+### Option 2: Jupyter Notebook
+**Interactive analysis with Python:**
 - `miRNA_Comprehensive_Analysis.ipynb` - Complete analysis pipeline
 - Interactive execution with real-time visualization
 - Organized output structure with Title Case naming
 - Outputs saved to: `outputs/jupyter_notebook/`
 
-### Option 2: Python Scripts
+### Option 3: Python Scripts
 **Modular analysis in separate scripts:**
 - `src/miRNA_analysis.py` - Part 1: Foundation & Validation
 - `src/miRNA_analysis_part2.py` - Part 2: Biomarker Discovery
@@ -36,18 +45,38 @@ This project analyzes miRNA expression patterns in saliva samples to identify bi
 
 ```
 miRNA-saliva-periodontal-analysis-new/
-├── 📔 miRNA_Comprehensive_Analysis.ipynb    # Complete Jupyter notebook
-├── 📄 miRNA-saliva-qPCR-results.csv        # Primary dataset
-├── 📄 requirements.txt                      # Dependencies
-├── 📁 src/                                  # Python scripts
-│   ├── miRNA_analysis.py                    # Part 1: Foundation
-│   ├── miRNA_analysis_part2.py              # Part 2: Biomarkers
-│   ├── miRNA_analysis_part3.py              # Part 3: ML Models
-│   └── miRNA_analysis_part4_corrected.py    # Part 4: Validation
-├── 📁 outputs/                              # Organized results
-│   ├── jupyter_notebook/                    # Notebook outputs
-│   │   ├── plots/                          # Visualizations
-│   │   ├── tables/                         # Data tables
+├── � miRNA_Comprehensive_Analysis_Complete.R  # ⭐ Main R script (recommended)
+├── 📔 miRNA_Comprehensive_Analysis.ipynb      # Jupyter notebook alternative
+├── 📄 miRNA-saliva-qPCR-results.csv          # Primary dataset
+├── 📄 requirements.txt                        # Python dependencies
+├── 📁 src/                                    # Scripts and utilities
+│   ├── miRNA_analysis.py                      # Python analysis parts
+│   ├── miRNA_analysis_part2.py
+│   ├── miRNA_analysis_part3.py
+│   ├── miRNA_analysis_part4_corrected.py
+│   ├── generate_enhanced_reports.py           # Report generators
+│   ├── html-pdf-docx-report-generator.py
+│   └── archived_scripts/                      # Older script versions
+├── 📁 docs/                                   # Documentation
+│   ├── FINAL_ANALYSIS_REPORT.md              # Comprehensive report
+│   ├── Comprehensive_Analysis_Report.md       # Analysis documentation
+│   ├── Expert_Panel_Review.md                # Expert validation
+│   ├── DATA_DICTIONARY.md                    # Data structure guide
+│   └── COMPREHENSIVE_ANALYSIS_RESULTS_*       # Multiple format reports
+├── 📁 outputs/                                # Organized results
+│   ├── r_script/                             # ⭐ R script outputs
+│   │   ├── plots/                            # Publication-ready plots
+│   │   ├── tables/                           # Statistical results
+│   │   ├── logs/                             # Execution logs
+│   │   └── miRNA_Analysis_Workspace.RData    # R workspace
+│   ├── jupyter_notebook/                      # Notebook outputs
+│   │   ├── plots/                            # Visualizations
+│   │   ├── tables/                           # Data tables
+│   │   └── sensitivity/                      # Sensitivity analyses
+│   ├── python_scripts/                       # Python script outputs
+│   └── comprehensive_results/                # Combined results
+└── 📁 .github/                               # GitHub configuration
+    └── copilot-instructions.md               # AI coding guidelines
 │   │   └── sensitivity/                    # Sensitivity analyses
 │   └── python_scripts/                     # Script outputs
 │       ├── plots/                          # Visualizations

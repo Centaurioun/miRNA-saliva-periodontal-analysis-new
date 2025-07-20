@@ -1,0 +1,4 @@
+GROUP,plaque_index_mean,plaque_index_sd,gingival_index_mean,gingival_index_sd,pocket_depth_mean,pocket_depth_sd,bleeding_on_probing_mean,bleeding_on_probing_sd,number_of_missing_teeth_mean,number_of_missing_teeth_sd
+G,1.07,0.54,1.21,0.4,2.21,0.32,25.01,13.58,0.44,0.97
+P,1.74,0.51,1.67,0.41,3.92,0.68,64.35,18.76,1.11,1.04
+S,0.44,0.24,0.5,0.24,1.98,0.21,5.78,3.07,0.39,1.05

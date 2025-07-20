@@ -1,0 +1,4 @@
+GROUP,n,age_mean,age_sd,age_min,age_max,female_n,female_pct
+G,36,22.4,1.7,20,27,20,55.6
+P,36,30.3,5.8,24,49,18,50
+S,36,24.3,3.7,20,34,19,52.8

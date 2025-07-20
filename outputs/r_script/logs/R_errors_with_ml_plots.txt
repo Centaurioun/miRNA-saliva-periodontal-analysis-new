@@ -1,0 +1,11 @@
+There were 26 warnings (use warnings() to see them)
+Setting direction: controls < cases
+Setting direction: controls < cases
+Setting direction: controls < cases
+Setting direction: controls < cases
+Setting direction: controls < cases
+Setting direction: controls < cases
+There were 50 or more warnings (use warnings() to see the first 50)
+Error in data.frame(Warning_Number = 1:length(warning_messages), Warning_Message = warning_messages,  : 
+  arguments imply differing number of rows: 50, 0, 1
+Execution halted

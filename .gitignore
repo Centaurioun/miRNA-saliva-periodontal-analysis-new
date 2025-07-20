@@ -176,3 +176,15 @@ settings.json
 *.crt
 auth/
 credentials/
+
+# R specific files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+*.rds
+*.rda
+.httr-oauth
+packrat/lib*/
+packrat/src/

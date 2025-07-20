@@ -1,0 +1,7 @@
+Problem,Model,Accuracy,AUC,CV_Mean_AUC,CV_Std_AUC,N_Train,N_Test
+Healthy_vs_Periodontitis,Logistic_Regression,1,1,1,0,58,14
+Healthy_vs_Periodontitis,Random_Forest,1,1,1,0,58,14
+Healthy_vs_Gingivitis,Logistic_Regression,0.9285714285714286,1,0.9116666666666666,0.14727986293003995,58,14
+Healthy_vs_Gingivitis,Random_Forest,1,1,1,0,58,14
+Gingivitis_vs_Periodontitis,Logistic_Regression,0.9285714285714286,0.9285714285714286,0.9611111111111111,0.054148857471160876,58,14
+Gingivitis_vs_Periodontitis,Random_Forest,1,1,0.9933333333333333,0.014907119849998594,58,14
