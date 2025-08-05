@@ -1,0 +1,7 @@
+miRNA,log2FC (H vs P),q-value,Cohen's d,Clinical Correlation (r),Biomarker Rank
+mir146a,2.34,0.001,1.24,0.65,4
+mir146b,1.87,0.003,0.98,0.58,6
+mir155,2.91,0.001,1.67,0.71,3
+mir203,3.45,0.001,2.01,0.73,2
+mir223,3.78,0.001,2.34,0.75,1
+mir381p,3.22,0.001,1.89,0.68,5
