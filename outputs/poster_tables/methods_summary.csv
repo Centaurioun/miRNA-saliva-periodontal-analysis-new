@@ -1,0 +1,13 @@
+Parameter,Details
+Study Design,Cross-sectional case-control
+Sample Size,n=108 (36 per group)
+Target miRNAs,"mir146a, mir146b, mir155, mir203, mir223, mir381p"
+Reference Gene,GAPDH (limitations noted)
+Normalization Method,ΔΔCt method (calibrated to healthy group)
+Statistical Tests,"Kruskal-Wallis, Mann-Whitney U"
+Multiple Testing Correction,Benjamini-Hochberg FDR
+Significance Threshold,"q < 0.05, |log2FC| > 1"
+Effect Size Measure,Cohen's d
+ML Algorithms,"Logistic Regression, Random Forest"
+Cross-Validation,Stratified 5-fold CV
+Performance Metrics,"AUC-ROC, Sensitivity, Specificity"

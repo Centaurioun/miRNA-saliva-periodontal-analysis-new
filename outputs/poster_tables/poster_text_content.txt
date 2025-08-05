@@ -1,0 +1,29 @@
+POSTER TEXT CONTENT
+==================================================
+
+ABSTRACT:
+
+BACKGROUND: Periodontal disease affects >50% of adults globally. Current diagnostic methods are invasive and subjective. This study investigated miRNA expression patterns in saliva as non-invasive biomarkers for periodontal disease progression.
+
+METHODS: Cross-sectional study of 108 participants (36 healthy, 36 gingivitis, 36 periodontitis). Six miRNAs were analyzed using qPCR with ΔΔCt normalization. Statistical analysis included Kruskal-Wallis tests with FDR correction and machine learning models.
+
+RESULTS: All 6 miRNAs were significantly dysregulated (q < 0.05). Top biomarkers (mir223, mir381p, mir203) achieved perfect classification (AUC = 1.000) for healthy vs periodontitis with strong clinical correlations (r = 0.60-0.75).
+
+CONCLUSIONS: Saliva-based miRNA biomarkers demonstrate excellent diagnostic potential for periodontal disease with clinical translation feasibility.
+        
+
+KEY FINDINGS:
+• 6 miRNAs identified as significant biomarkers (q < 0.05, |log2FC| > 1)
+• Perfect diagnostic accuracy: AUC = 1.000 (Healthy vs Periodontitis)
+• Top 3 biomarkers: mir223, mir381p, mir203
+• Strong clinical correlations: r = 0.60-0.75 with PPD, CAL, BoP
+• Robust cross-validation performance: Mean AUC = 0.985 ± 0.023
+• Non-invasive saliva-based assay feasible for clinical implementation
+
+CLINICAL IMPACT:
+• Non-invasive screening tool for periodontal disease
+• Early detection capability for gingivitis progression
+• Objective biomarker complement to clinical assessment
+• Point-of-care potential with portable qPCR devices
+• Cost-effective alternative to invasive procedures
+• Real-time monitoring of treatment response
