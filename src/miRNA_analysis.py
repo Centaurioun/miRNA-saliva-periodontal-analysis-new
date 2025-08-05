@@ -54,7 +54,7 @@ BASE_OUTPUT_DIR = "outputs/python_scripts"
 OUTPUT_DIRS = {
     'base': BASE_OUTPUT_DIR,
     'plots': f"{BASE_OUTPUT_DIR}/plots",
-    'tables': f"{BASE_OUTPUT_DIR}/tables", 
+    'tables': f"{BASE_OUTPUT_DIR}/tables",
     'sensitivity': f"{BASE_OUTPUT_DIR}/sensitivity"
 }
 
@@ -66,7 +66,7 @@ def get_output_path(filename, output_type='plots'):
     """Get standardized output path with Title Case naming"""
     if not filename.endswith(('.png', '.jpg', '.jpeg', '.pdf', '.csv', '.txt')):
         filename += '.png'  # Default to PNG for plots
-    
+
     return os.path.join(OUTPUT_DIRS[output_type], filename)
 
 
@@ -98,7 +98,7 @@ def load_and_inspect_data():
     print("-" * 50)
 
     # Load data
-    df = pd.read_csv("miRNA-saliva-qPCR-results.csv")
+    df = pd.read_csv("data/miRNA-saliva-qPCR-results.csv")
     print(f"✓ Data loaded successfully: {df.shape[0]} samples, {df.shape[1]} variables")
 
     # Data integrity check
