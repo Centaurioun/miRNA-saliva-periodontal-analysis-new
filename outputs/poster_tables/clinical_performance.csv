@@ -1,0 +1,5 @@
+Comparison,AUC,Sensitivity (%),Specificity (%),PPV (%),NPV (%),F1-Score
+Healthy vs Gingivitis,0.875,78.5,82.1,80.3,80.6,0.794
+Healthy vs Periodontitis,1.0,100.0,100.0,100.0,100.0,1.0
+Gingivitis vs Periodontitis,0.923,85.2,88.7,87.1,86.9,0.868
+Multi-class (H vs G vs P),0.962,89.3,91.2,89.8,90.7,0.901
